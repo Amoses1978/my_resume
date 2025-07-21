@@ -8,7 +8,7 @@ on:
 permissions:
   id-token: write
   contents: read
-  
+
 env:
   AWS_REGION: us-east-1
   AWS_ROLE: ${{ secrets.AWS_ACTION_ROLE }}
@@ -23,7 +23,7 @@ jobs:
       - name: AWS creds config
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: ${{ env.AWS_ROLE }}           # OIDC Open ID Connect
+          role-to-assume: arn:aws:iam::120569604953:role/github-action-role3          # OIDC Open ID Connect
           aws-region: ${{ env.AWS_REGION }}
       - name: loging to ecr
         uses: aws-actions/amazon-ecr-login@v1
