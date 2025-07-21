@@ -117,7 +117,7 @@ jobs:
       - name: AWS Creds Config
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: ${{ env.AWS_ROLE }}
+          role-to-assume: arn:aws:iam::120569604953:role/github-action-role3
           aws-region: ${{ env.AWS_REGION }}
      
       - name: Download current task definition
